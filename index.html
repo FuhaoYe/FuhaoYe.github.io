@@ -470,10 +470,18 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">type</span>: git</div><div class="line">repository: 你项目的SSH</div><div class="line">branch: gh-pages(如果博客地址是yourname.github.io，分支名就是master)</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>   至此，hexo全局配置就完成了，这个时候，你需要再在命令行工具输入(注意在根目录中git-bash)：<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   $ hexo g (或 hexo generate)</div><div class="line">   $ hexo s (或 hexo server)</div><div class="line">   打开浏览器，输入localhost:4000,如果标题变为你_config.yml文件最上面title输入的东西，那么文件就更新成功了！</div><div class="line">   </div><div class="line">2. 上传到github</div><div class="line">   </div><div class="line">   在上传到github之前还需要安装一个东西，在命令行输入：</div><div class="line">   ``` bash</div><div class="line">   npm install --save hexo-deployer-git</div></pre></td></tr></table></figure></p>
-<p>   这样才能上传到github上，不然上传的话会报错</p>
-<p>   在本地修改完成了，就可以上传到GitHub上，输入<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d ( 或 hexo deploy )</div></pre></td></tr></table></figure></p>
-<p>   此时可以在浏览器地址栏输入根目录下 _config.yml 文件中的 url就能看到博客了</p>
+<p>   至此，hexo全局配置就完成了，这个时候，你需要再在命令行工具输入(注意在根目录中git-bash)：<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g (或 hexo generate)</div><div class="line">$ hexo s (或 hexo server)</div></pre></td></tr></table></figure></p>
+<p>   打开浏览器，输入localhost:4000,如果标题变为你_config.yml文件最上面title输入的东西，那么文件就更新成功了！</p>
+<ol>
+<li><p>上传到github</p>
+<p>在上传到github之前还需要安装一个东西，在命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-deployer-git</div></pre></td></tr></table></figure>
+<p>这样才能上传到github上，不然上传的话会报错</p>
+<p>在本地修改完成了，就可以上传到GitHub上，输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d ( 或 hexo deploy )</div></pre></td></tr></table></figure>
+<p>此时可以在浏览器地址栏输入根目录下 _config.yml 文件中的 url就能看到博客了</p>
+</li>
+</ol>
 <h3 id="hexo主题配置"><a href="#hexo主题配置" class="headerlink" title="hexo主题配置"></a>hexo主题配置</h3>
           
         
