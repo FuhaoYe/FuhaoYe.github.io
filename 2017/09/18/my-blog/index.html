@@ -95,21 +95,21 @@
 
 
 
-<meta name="description" content="简述  分三个方面，第一个方面为搭建hexo博客，第二个方面为hexo全局配置，第三个方面为hexo主题配置 搭建hexo博客，需要 安装node.js 安装git 在github上注册账号 配置hexo  hexo的搭建 来到node官网下载node(建议下载稳定版的)安装包，下载完后运行安装程序，然后一直点    下一步就行了(安装的时候建议使用默认路径)。 然后，打开cmd或者git bus">
+<meta name="description" content="简述  分四个方面，第一个方面为搭建hexo博客，第二个方面为hexo全局配置，第三个方面为hexo主题配置，第四个为如何写博客 搭建hexo博客，需要 安装node.js 安装git 在github上注册账号 配置hexo  hexo的搭建   来到node官网下载node(建议下载稳定版的)安装包，下载完后运行安装程序，然后一直点    下一步就行了(安装的时候建议使用默认路径)。    然后">
 <meta name="keywords" content="blogs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+github搭建博客">
 <meta property="og:url" content="https://FuhaoYe.github.io/blog/2017/09/18/my-blog/index.html">
 <meta property="og:site_name" content="富豪的博客">
-<meta property="og:description" content="简述  分三个方面，第一个方面为搭建hexo博客，第二个方面为hexo全局配置，第三个方面为hexo主题配置 搭建hexo博客，需要 安装node.js 安装git 在github上注册账号 配置hexo  hexo的搭建 来到node官网下载node(建议下载稳定版的)安装包，下载完后运行安装程序，然后一直点    下一步就行了(安装的时候建议使用默认路径)。 然后，打开cmd或者git bus">
+<meta property="og:description" content="简述  分四个方面，第一个方面为搭建hexo博客，第二个方面为hexo全局配置，第三个方面为hexo主题配置，第四个为如何写博客 搭建hexo博客，需要 安装node.js 安装git 在github上注册账号 配置hexo  hexo的搭建   来到node官网下载node(建议下载稳定版的)安装包，下载完后运行安装程序，然后一直点    下一步就行了(安装的时候建议使用默认路径)。    然后">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://fuhaoye.github.io/blog/2017/09/18/images/gitimg.png">
 <meta property="og:image" content="https://fuhaoye.github.io/blog/2017/09/18/images/hexoimg.JPG">
 <meta property="og:image" content="https://fuhaoye.github.io/blog/2017/09/18/images/site.png">
-<meta property="og:updated_time" content="2017-09-19T02:24:36.498Z">
+<meta property="og:updated_time" content="2017-09-19T02:46:57.339Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github搭建博客">
-<meta name="twitter:description" content="简述  分三个方面，第一个方面为搭建hexo博客，第二个方面为hexo全局配置，第三个方面为hexo主题配置 搭建hexo博客，需要 安装node.js 安装git 在github上注册账号 配置hexo  hexo的搭建 来到node官网下载node(建议下载稳定版的)安装包，下载完后运行安装程序，然后一直点    下一步就行了(安装的时候建议使用默认路径)。 然后，打开cmd或者git bus">
+<meta name="twitter:description" content="简述  分四个方面，第一个方面为搭建hexo博客，第二个方面为hexo全局配置，第三个方面为hexo主题配置，第四个为如何写博客 搭建hexo博客，需要 安装node.js 安装git 在github上注册账号 配置hexo  hexo的搭建   来到node官网下载node(建议下载稳定版的)安装包，下载完后运行安装程序，然后一直点    下一步就行了(安装的时候建议使用默认路径)。    然后">
 <meta name="twitter:image" content="https://fuhaoye.github.io/blog/2017/09/18/images/gitimg.png">
 
 
@@ -427,64 +427,50 @@
       
 
       
-        <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>  分三个方面，第一个方面为搭建hexo博客，第二个方面为hexo全局配置，第三个方面为hexo主题配置</p>
+        <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>  分四个方面，第一个方面为搭建hexo博客，第二个方面为hexo全局配置，第三个方面为hexo主题配置，第四个为如何写博客</p>
 <h2 id="搭建hexo博客，需要"><a href="#搭建hexo博客，需要" class="headerlink" title="搭建hexo博客，需要"></a>搭建hexo博客，需要</h2><ul>
 <li>安装node.js</li>
 <li>安装git</li>
 <li>在github上注册账号</li>
 <li>配置hexo</li>
 </ul>
-<h3 id="hexo的搭建"><a href="#hexo的搭建" class="headerlink" title="hexo的搭建"></a>hexo的搭建</h3><ol>
-<li><p>来到node官网下载node(建议下载稳定版的)安装包，下载完后运行安装程序，然后一直点    下一步就行了(安装的时候建议使用默认路径)。</p>
-<p>然后，打开cmd或者git bush输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure>
-<p>如果出现版本号说明安装成功。</p>
-</li>
-<li><p>在 GitHub 上新建一个点击<em>New repository</em>新建一个项目，名字     为<em>yourname.github.io</em>,注意： <em>yourname</em>必须是你的用户名。</p>
-<p><img src="../images/gitimg.png" alt="git img"></p>
-<p>在git-bash上输入命令将该项目克隆岛本地仓库，SSH为刚刚复制的代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> SSH</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>进入本地仓库，运行git-bash,输入以下命令来安装hexo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo(或者npm i -g hexo)</div></pre></td></tr></table></figure>
-<p>若该命令不能报错，则创建一个文件夹（比如blog），进入后执行上述命令</p>
-</li>
-<li><p>在上述命令成功的文件夹里执行以下命令：初始化、本地更新、本地查看</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div><div class="line">$ hexo g (或 hexo generate)</div><div class="line">$ hexo s (或 hexo server)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>打开浏览器输入localhost:4000,看到如下的界面就是Hexo主题</p>
-<p><img src="../images/hexoimg.JPG" alt="hexoimg"></p>
-</li>
-</ol>
-<h3 id="hexo全局配置"><a href="#hexo全局配置" class="headerlink" title="hexo全局配置"></a>hexo全局配置</h3><ol>
-<li><p>配置根目录下的_config.yml</p>
-<p>打开根目录下的站点配置文件 _config.yml (区别 theme下的主题配置文件 _config.yml)，  可以参考<a href="http://blog.csdn.net/xuezhisdc/article/details/53130383" target="_blank" rel="external">hexo配置教程</a>填写信息。打开以后，把最上面的Site的博客基本信息填写完毕。<br><img src="../images/site.png" alt="site.png"></p>
-<p><em>特别注意</em>： 冒号后面有一个空格，这个空格不能少</p>
-<p>然后来到下面的<em>URL</em>填写你博客的网址</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">url: https:用户名.github.io/blog</div><div class="line">root: /blog</div></pre></td></tr></table></figure>
-<p>上面的这个root填写的是io后面的内容，我的是/blog(如果没有，那就是/ 特别注意：root后面不能为空)，样式没有加载很有可能是这个原因</p>
-<p>接着，在 _config.yml 文件的最下面有个 deploy:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">type</span>: git</div><div class="line">repository: 你项目的SSH</div><div class="line">branch: gh-pages(如果博客地址是yourname.github.io，分支名就是master)</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h3 id="hexo的搭建"><a href="#hexo的搭建" class="headerlink" title="hexo的搭建"></a>hexo的搭建</h3><p>   来到node官网下载node(建议下载稳定版的)安装包，下载完后运行安装程序，然后一直点    下一步就行了(安装的时候建议使用默认路径)。</p>
+<p>   然后，打开cmd或者git bush输入：</p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure>
+<p>   如果出现版本号说明安装成功。</p>
+<p>   在 GitHub 上新建一个点击<em>New repository</em>新建一个项目，名字       为<em>yourname.github.io</em>,注意： <em>yourname</em>必须是你的用户名。</p>
+<p>   <img src="../images/gitimg.png" alt="git img"></p>
+<p>   在git-bash上输入命令将该项目克隆岛本地仓库，SSH为刚刚复制的代码<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> SSH</div></pre></td></tr></table></figure></p>
+<p>   进入本地仓库，运行git-bash,输入以下命令来安装hexo</p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo(或者npm i -g hexo)</div></pre></td></tr></table></figure>
+<p>   若该命令不能报错，则创建一个文件夹（比如blog），进入后执行上述命令</p>
+<p>   在上述命令成功的文件夹里执行以下命令：初始化、本地更新、本地查看</p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div><div class="line">$ hexo g (或 hexo generate)</div><div class="line">$ hexo s (或 hexo server)</div></pre></td></tr></table></figure>
+<p>   打开浏览器输入localhost:4000,看到如下的界面就是Hexo主题</p>
+<p>   <img src="../images/hexoimg.JPG" alt="hexoimg"></p>
+<h3 id="hexo全局配置"><a href="#hexo全局配置" class="headerlink" title="hexo全局配置"></a>hexo全局配置</h3><p>   配置根目录下的_config.yml</p>
+<p>   打开根目录下的站点配置文件 _config.yml (区别 theme下的主题配置文件 _config.yml)，  可以参考<a href="http://blog.csdn.net/xuezhisdc/article/details/53130383" target="_blank" rel="external">hexo配置教程</a>填写信息。打开以后，把最上面的Site的博客基本信息填写完毕。<br>   <img src="../images/site.png" alt="site"></p>
+<p>   <em>特别注意</em>： 冒号后面有一个空格，这个空格不能少</p>
+<p>   然后来到下面的<em>URL</em>填写你博客的网址<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">url: https:用户名.github.io/blog</div><div class="line">root: /blog</div></pre></td></tr></table></figure></p>
+<p>   上面的这个root填写的是io后面的内容，我的是/blog(如果没有，那就是/ 特别注意：root后面不能为空)，样式没有加载很有可能是这个原因</p>
+<p>   接着，在 _config.yml 文件的最下面有个 deploy:<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">type</span>: git</div><div class="line">repository: 你项目的SSH</div><div class="line">branch: gh-pages(如果博客地址是yourname.github.io，分支名就是master)</div></pre></td></tr></table></figure></p>
 <p>   至此，hexo全局配置就完成了，这个时候，你需要再在命令行工具输入(注意在根目录中git-bash)：<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g (或 hexo generate)</div><div class="line">$ hexo s (或 hexo server)</div></pre></td></tr></table></figure></p>
 <p>   打开浏览器，输入localhost:4000,如果标题变为你_config.yml文件最上面title输入的东西，那么文件就更新成功了！</p>
-<ol>
-<li><p>上传到github</p>
-<p>在上传到github之前还需要安装一个东西，在命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-deployer-git</div></pre></td></tr></table></figure>
-<p>这样才能上传到github上，不然上传的话会报错</p>
-<p>在本地修改完成了，就可以上传到GitHub上，输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d ( 或 hexo deploy )</div></pre></td></tr></table></figure>
-<p>此时可以在浏览器地址栏输入根目录下 _config.yml 文件中的 url就能看到博客了</p>
+<p>   上传到github</p>
+<p>   在上传到github之前还需要安装一个东西，在命令行输入：<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-deployer-git</div></pre></td></tr></table></figure></p>
+<p>   这样才能上传到github上，不然上传的话会报错</p>
+<p>   在本地修改完成了，就可以上传到GitHub上，输入<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d ( 或 hexo deploy )</div></pre></td></tr></table></figure></p>
+<p>   此时可以在浏览器地址栏输入根目录下 _config.yml 文件中的 url就能看到博客了</p>
+<h3 id="hexo主题配置"><a href="#hexo主题配置" class="headerlink" title="hexo主题配置"></a>hexo主题配置</h3><ol>
+<li><p>在<a href="https://hexo.io/themes/" target="_blank" rel="external">hexo官方主题</a>找一些自己喜欢的主题，并配置主题。我实下载的<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">next主题</a>,  结合着<a href="http://theme-next.iissnan.com/third-party-services.html#swfitype" target="_blank" rel="external">next配置说明</a>来配置。</p>
+<p><em>注意</em>： 特别要区分根目录下的config.yml文件与根目录下themes里面的主题里的config.yml文件 </p>
+<p>配置完以后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure>
+<p>就可以看到效果了</p>
 </li>
 </ol>
-<h3 id="hexo主题配置"><a href="#hexo主题配置" class="headerlink" title="hexo主题配置"></a>hexo主题配置</h3><ol>
-<li>在<a href="https://hexo.io/themes/" target="_blank" rel="external">hexo官方主题</a>找一些自己喜欢的主题，并配置主题。我选择的是<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">next主题</a>,  结合着[next配置说明]来配置。</li>
+<h3 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h3><ol>
+<li>创建文章</li>
 </ol>
 
       
@@ -693,7 +679,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简述"><span class="nav-number">1.</span> <span class="nav-text">简述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建hexo博客，需要"><span class="nav-number">1.1.</span> <span class="nav-text">搭建hexo博客，需要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo的搭建"><span class="nav-number">1.1.1.</span> <span class="nav-text">hexo的搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo全局配置"><span class="nav-number">1.1.2.</span> <span class="nav-text">hexo全局配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo主题配置"><span class="nav-number">1.1.3.</span> <span class="nav-text">hexo主题配置</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简述"><span class="nav-number">1.</span> <span class="nav-text">简述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建hexo博客，需要"><span class="nav-number">1.1.</span> <span class="nav-text">搭建hexo博客，需要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo的搭建"><span class="nav-number">1.1.1.</span> <span class="nav-text">hexo的搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo全局配置"><span class="nav-number">1.1.2.</span> <span class="nav-text">hexo全局配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo主题配置"><span class="nav-number">1.1.3.</span> <span class="nav-text">hexo主题配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写博客"><span class="nav-number">1.1.4.</span> <span class="nav-text">写博客</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
