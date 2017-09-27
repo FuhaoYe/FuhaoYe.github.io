@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="富豪的博客">
 <meta property="og:description" content="JSON (Javascript Object Notation) js对象表示法JSON是一种被许多不同系统用于交换数据的一种数据交换格式，类似还有XML数据交换格式， 字面量与变量 字面量(literal)：所谓字面量，是对数据值的具体表示，他的字面意思与其想要表达的意思完全一致，例如12x = 5x = x+5 这里中虽然我们没看看到10，但是我们知道x的值已经是10了，其中x就是变量，5就">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-27T00:55:51.550Z">
+<meta property="og:updated_time" content="2017-09-27T07:42:41.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSON随笔录">
 <meta name="twitter:description" content="JSON (Javascript Object Notation) js对象表示法JSON是一种被许多不同系统用于交换数据的一种数据交换格式，类似还有XML数据交换格式， 字面量与变量 字面量(literal)：所谓字面量，是对数据值的具体表示，他的字面意思与其想要表达的意思完全一致，例如12x = 5x = x+5 这里中虽然我们没看看到10，但是我们知道x的值已经是10了，其中x就是变量，5就">
@@ -445,9 +445,50 @@
 <li>布尔值</li>
 <li>数组</li>
 <li>对象</li>
-<li>null
-　　　</li>
+<li><p>null</p>
+</li>
+<li><p>注意不要把null和js中的undefined混淆，尤其是在使用js时。undefined不是JSON中的数据类型，而在js中，undefined是在尝试获取一些不存在的对象或者变量时返回的结果，也就是说，undefined与那些声明的名称和值都不存在的对象或变量有关,而null则仅仅与对象或变量的值有关。null是一个表示“没有值”的值，在JSON中，null必须使用小写形式*</p>
+</li>
 </ul>
+<h3 id="数组与对象"><a href="#数组与对象" class="headerlink" title="数组与对象"></a>数组与对象</h3><p>数组与对象有两个很大的区别：</p>
+<ol>
+<li>数组是值构成的列表或集合，但对象是名称-值对构成的列表或集合</li>
+<li>数组中所有的值应该具有相同的数据类型</li>
+</ol>
+<h3 id="JSON-Schema-模式"><a href="#JSON-Schema-模式" class="headerlink" title="JSON Schema(模式)"></a>JSON Schema(模式)</h3><ol>
+<li>JSON Schema是数据交换中的一种虚拟的”合同”</li>
+<li>JSON Schema可以解决下列有关一致性验证的问题</li>
+</ol>
+<p>JSON Schema一般时客户发来的一份数据要求格式。<br>可以帮助回答一下问题</p>
+<ul>
+<li><p>值的数据类型是否正确？<br>　　可以具体规定一个值是数字、字符串等类型</p>
+</li>
+<li><p>是否包含所需要的数据？<br>　　可以具体规定哪些数据时需要的，那些数据是不需要的</p>
+</li>
+<li><p>值的形式是不是我需要的？<br>　　可以指定范围、最小值和最大值</p>
+</li>
+</ul>
+<blockquote>
+<p>第一个为”$schema”,值必须为所用草拟版本的链接<br>第二个为”title”,名称-值对应该是JSON Schema文件的标题:比如说表示一直猫的JSON Schema文件格式<br>第三个为”properties”,是需要定义的属性：比如说该猫的属性，常常带有数据限制(类似长度限制)<br>第四个为”required”,是个数组，表示在JSON中必须填写的properties中的属性:比如下面代码中name,age,declawed必须在JSON中填写，但是description没在required中,在JSON不是必名称-值对。</p>
+</blockquote>
+<p>一份JSON Schema：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"<span class="variable">$schema</span>"</span>: <span class="string">"http://json-schema.org/draft-04/schema#"</span>,</div><div class="line">    <span class="string">"title"</span>: <span class="string">"Cat"</span>,</div><div class="line">    <span class="string">"properties"</span>: &#123;</div><div class="line">        <span class="string">"name"</span>: &#123;</div><div class="line">            <span class="string">"type"</span>: <span class="string">"string"</span>,</div><div class="line">            <span class="string">"minLength"</span>: 3, //minLength为最小字符串长度</div><div class="line">            <span class="string">"maxLength"</span>: 20 //manLength为最大字符串长度</div><div class="line">        &#125;,</div><div class="line">        <span class="string">"age"</span>: &#123;</div><div class="line">            <span class="string">"type"</span>: <span class="string">"number"</span>,</div><div class="line">            <span class="string">"minimum"</span>: 0,   //minimum为最小整型大小</div><div class="line">            <span class="string">"description"</span>: <span class="string">"Your cat's age in years."</span></div><div class="line">        &#125;,</div><div class="line">        <span class="string">"declawed"</span>: &#123;</div><div class="line">            <span class="string">"type"</span>: <span class="string">"boolean"</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="string">"required"</span>: [</div><div class="line">        <span class="string">"name"</span>,</div><div class="line">        <span class="string">"age"</span>,</div><div class="line">        <span class="string">"declawed"</span></div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>根据上面的JSON Schema,写的一份符合要求的JSON数据：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"name"</span>: <span class="string">"fufu"</span>,     //满足名字为3-20字符长度</div><div class="line">    <span class="string">"age"</span>: 2,           //满足年龄大于0</div><div class="line">    <span class="string">"declawed"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"description"</span>: <span class="string">"我这个属性可写可不写，毕竟我不在required中"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果你想要验证你的JSON与JSON Schema格式是否出错,请访问下面链接</p>
+<blockquote>
+<p><a href="http://jsonlint.com" target="_blank" rel="external">http://jsonlint.com</a></p>
+</blockquote>
+<p>如果你想要验证你的JSON与JSON Schema是否一致，请访问下面链接</p>
+<blockquote>
+<p><a href="https://jsonschemalint.com/draft4" target="_blank" rel="external">https://jsonschemalint.com/draft4</a></p>
+</blockquote>
+<p>JSON Schema还支持正则表达式、枚举类型等。<br>如果你想要深入掌握JSON Schema可以访问下面的链接</p>
+<ul>
+<li><a href="http://json-schema.org" target="_blank" rel="external">JSON Schema主页</a></li>
+<li><a href="http://json-schema.org/latest/json-schema-validation.html" target="_blank" rel="external">JSON Schema验证规范</a></li>
+</ul>
+<h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><p>反序列化：将文本转化为对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var myObject = JSON.parse(??.responseText)</div></pre></td></tr></table></figure></p>
+<p>序列化： 将对象转化为文本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var myJSON = JSON.stringify(myObject)</div></pre></td></tr></table></figure></p>
+<h3 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h3><p>下列是一个get请求<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">request = new XMLHttpRequest()</div><div class="line">request.onreadystatechange = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">    <span class="keyword">if</span>(request.readyState == 4) &#123;</div><div class="line">        <span class="keyword">if</span>((request.status &gt;= 200 &amp;&amp; request.status &lt; 300) || request.status == 304) &#123;</div><div class="line">	       alert(<span class="string">'提交成功'</span>)</div><div class="line">           alert(request.responseText);	</div><div class="line">           &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            alert(<span class="string">"提交失败 ："</span> + request.status);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">request.open(<span class="string">"GET"</span>,<span class="string">"#?"</span>+url,<span class="literal">true</span>);</div><div class="line">request.send();</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -655,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字面量与变量"><span class="nav-number">1.</span> <span class="nav-text">字面量与变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名称-值对"><span class="nav-number">2.</span> <span class="nav-text">名称-值对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体类型"><span class="nav-number">3.</span> <span class="nav-text">媒体类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字面量与变量"><span class="nav-number">1.</span> <span class="nav-text">字面量与变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名称-值对"><span class="nav-number">2.</span> <span class="nav-text">名称-值对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体类型"><span class="nav-number">3.</span> <span class="nav-text">媒体类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组与对象"><span class="nav-number">5.</span> <span class="nav-text">数组与对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON-Schema-模式"><span class="nav-number">6.</span> <span class="nav-text">JSON Schema(模式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列化与反序列化"><span class="nav-number">7.</span> <span class="nav-text">序列化与反序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLHttpRequest"><span class="nav-number">8.</span> <span class="nav-text">XMLHttpRequest</span></a></li></ol></div>
             
 
           </div>
