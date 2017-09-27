@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="富豪的博客">
 <meta property="og:description" content="JSON (Javascript Object Notation) js对象表示法JSON是一种被许多不同系统用于交换数据的一种数据交换格式，类似还有XML数据交换格式， 字面量与变量 字面量(literal)：所谓字面量，是对数据值的具体表示，他的字面意思与其想要表达的意思完全一致，例如12x = 5x = x+5 这里中虽然我们没看看到10，但是我们知道x的值已经是10了，其中x就是变量，5就">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-27T07:42:41.762Z">
+<meta property="og:updated_time" content="2017-09-27T23:30:57.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSON随笔录">
 <meta name="twitter:description" content="JSON (Javascript Object Notation) js对象表示法JSON是一种被许多不同系统用于交换数据的一种数据交换格式，类似还有XML数据交换格式， 字面量与变量 字面量(literal)：所谓字面量，是对数据值的具体表示，他的字面意思与其想要表达的意思完全一致，例如12x = 5x = x+5 这里中虽然我们没看看到10，但是我们知道x的值已经是10了，其中x就是变量，5就">
@@ -488,7 +488,75 @@
 </ul>
 <h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><p>反序列化：将文本转化为对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var myObject = JSON.parse(??.responseText)</div></pre></td></tr></table></figure></p>
 <p>序列化： 将对象转化为文本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var myJSON = JSON.stringify(myObject)</div></pre></td></tr></table></figure></p>
-<h3 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h3><p>下列是一个get请求<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">request = new XMLHttpRequest()</div><div class="line">request.onreadystatechange = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">    <span class="keyword">if</span>(request.readyState == 4) &#123;</div><div class="line">        <span class="keyword">if</span>((request.status &gt;= 200 &amp;&amp; request.status &lt; 300) || request.status == 304) &#123;</div><div class="line">	       alert(<span class="string">'提交成功'</span>)</div><div class="line">           alert(request.responseText);	</div><div class="line">           &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            alert(<span class="string">"提交失败 ："</span> + request.status);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">request.open(<span class="string">"GET"</span>,<span class="string">"#?"</span>+url,<span class="literal">true</span>);</div><div class="line">request.send();</div></pre></td></tr></table></figure></p>
+<h3 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h3><blockquote>
+<p>XMLHttpRequest是一种js对象，无需刷新页面即可从一个URL获取数据，常用语AJAX编程</p>
+</blockquote>
+<p>下列是一个get请求<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">request = new XMLHttpRequest()</div><div class="line">request.onreadystatechange = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">    <span class="keyword">if</span>(request.readyState == 4) &#123;</div><div class="line">        <span class="keyword">if</span>((request.status &gt;= 200 &amp;&amp; request.status &lt; 300) || request.status == 304) &#123;</div><div class="line">	       alert(<span class="string">'提交成功'</span>)</div><div class="line">           alert(request.responseText);	</div><div class="line">           &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            alert(<span class="string">"提交失败 ："</span> + request.status);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">request.open(<span class="string">"GET"</span>,<span class="string">"#?"</span>+url,<span class="literal">true</span>);</div><div class="line">request.send();</div></pre></td></tr></table></figure></p>
+<p>XMLHttpRequest中属性：</p>
+<ul>
+<li><p>onreadystatechange<br>可以在代码中给他赋值为一个函数</p>
+</li>
+<li><p>readyState<br>返回一个0-4的值，用来表示状态吗</p>
+</li>
+<li><p>status<br>返回HTTP状态码,(如200表示请求成功)</p>
+</li>
+<li><p>responseText<br>当请求成功时，该属性会包含作为文本的相应体(如我们请求的JSON)</p>
+</li>
+</ul>
+<p>注意: js中属性的值可以是一个函数，因为js中函数也是一类对象，对象是一类数据，因此可以被赋值给一个变量(属性)、修改和传递。</p>
+<p>request.onreadystatechange表示readyState(就绪状态)每次改变时就会调用该函数。<br>就绪状态从0-4分别意味着：</p>
+<ul>
+<li>0表示未发送: 表示open()函数还没有执行</li>
+<li>1表示已经发送: open()函数已经执行，但是send()函数还没有执行</li>
+<li>2表示接收到头部: 表示send()函数已执行，切头部和状态码都可以获取了</li>
+<li>3表示解析中： 表示头部已经收到，但响应体正在解析中</li>
+<li>4表示完成： 表示请求完成，包括响应头和响应体的内容都已经接收到了</li>
+</ul>
+<h3 id="跨域资源共享-CORS"><a href="#跨域资源共享-CORS" class="headerlink" title="跨域资源共享(CORS)"></a>跨域资源共享(CORS)</h3><blockquote>
+<p>通过设置响应头，是的跨域请求资源(如JSON文档)可以成功。</p>
+</blockquote>
+<p>首先要明白什么是同源策略?<br>所谓同源策略，就是浏览器处于安全考虑，对资源共享有一定的限制<br>同源策略要求后台请求仅仅可以请求来自同一域名的资源，由于后台请求仅可以在浏览器的开发者工具中看见，因此保护了普通用户的安全，客户端的则能在网页审查元素中看到。</p>
+<p>假如前面实例中的代码是在一个名为<a href="http://www.mycoolsite.com的网站上执行的，由于它是最开始的请求的URL，所以它就是原始域名，而API的URL是http://api.openweather.org/data/2.5/weather?lat=35&amp;lon=113,其域名http://api.openweather.org与原始域名http://www.mycoolsite.com不匹配，很明显，这违背了同源策略。所以该API需要使用一些手段来绕过这些现实，才能使后台请求与相应顺利进行。" target="_blank" rel="external">http://www.mycoolsite.com的网站上执行的，由于它是最开始的请求的URL，所以它就是原始域名，而API的URL是http://api.openweather.org/data/2.5/weather?lat=35&amp;lon=113,其域名http://api.openweather.org与原始域名http://www.mycoolsite.com不匹配，很明显，这违背了同源策略。所以该API需要使用一些手段来绕过这些现实，才能使后台请求与相应顺利进行。</a></p>
+<p>如何跨域资源共享？<br>一些API开发者在他们的服务器上实现了跨域资源共享，这些服务器会在响应头额外加上一些带有Access-Control-Allow前缀的属性</p>
+<p>例如xxAPI对于请求的<a href="http://api.openweather.org/weather?lat=35&amp;lon=113返回的响应头中的Access-Control-Allow部分" target="_blank" rel="external">http://api.openweather.org/weather?lat=35&amp;lon=113返回的响应头中的Access-Control-Allow部分</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Credentials: <span class="literal">true</span></div><div class="line">Access-Control-Allow-Methods: GET, POST</div><div class="line">Access-Control-Allow-Origin: *</div></pre></td></tr></table></figure>
+<p>这些头部定义了证书是否可用？哪些HTTP(GET、POST、DELETE、HEAD等)是可用的？以及最最重要的一点，即允许哪些域名？本例中，此处包含一个星号*，他表示任何域名都是允许的。</p>
+<p>CORS使得如Open Weather这样的站点可以让用户在用户端使用AJAX交互的方式获取他们的数据，同事，CORS还可以用于禁止某些域名的访问，来防止有些人用API做坏事，如CSRF，eg：黑客企图通过将JSON放入<srcipt></srcipt>标签来利用银行站点的信任。现在银行有了一个新的安全方式来防止这种攻击，这个方式就是实现CORS并且在其响应头中加入类似如下的内容：</p>
+<blockquote>
+<p>使用CORS进行安全防护</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Methods: POST</div><div class="line">Access-Control-Origin: http://www.somebank.com</div></pre></td></tr></table></figure>
+<p>上述内容中，我们仅仅允许通过POST方法请求资源，如果有人想通过将URL放入<script></script>标签来进行请求(使用GET方式)，浏览器会阻止他，同时，由于具体设定了银行站点的URL，浏览器会禁止除<a href="http://www.somebank.com以外的站点去获取资源。" target="_blank" rel="external">http://www.somebank.com以外的站点去获取资源。</a></p>
+<p>使用CORS也会遇到一些问题，而且也不是所有的JSON数据都是从标准的Web API(Web API是通过HTTP与服务进行交互的一系列指令与标准)中获取的，例如可能你又两个域名不同的站点(<a href="http://www.domainone.com和http://www.domaintwo.com)，且想让http://www.domainone.com与http://www.domaintwo.com共享一些JSON文件，这就需要JSON-P了" target="_blank" rel="external">http://www.domainone.com和http://www.domaintwo.com)，且想让http://www.domainone.com与http://www.domaintwo.com共享一些JSON文件，这就需要JSON-P了</a></p>
+<h3 id="JSON-P"><a href="#JSON-P" class="headerlink" title="JSON-P"></a>JSON-P</h3><blockquote>
+<p>使用script标签，绕过同归策略的限制，以从不同域名的服务器上请求JSON</p>
+</blockquote>
+<p>JSON-P指带有padding的JSON,我们之前说的<srcipt></srcipt>标签不受同源策略的影响，JSON-P就是利用这一点来向不同域名的站点请求JSON的<br>JSON-P并没有CORS那么理想，它只是一个备选方案(CORS是更好的方案，同时也是一种标准)，不过有时候，还是很需要这种不是很规范的解决方案的。当不能使用CORS时，仍需要通过某种关系来实现<a href="http://www.domainone.com和http://www.domaintwo.com之间的交流。" target="_blank" rel="external">http://www.domainone.com和http://www.domaintwo.com之间的交流。</a></p>
+<p>JSON-P中的padding(内联)非常简单，就是将js加入JSON文档，如下：</p>
+<blockquote>
+<p>示例：JSON-P</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">getTheAnimal(</div><div class="line">    &#123;</div><div class="line">        <span class="string">"animal"</span>: <span class="string">"cat"</span> </div><div class="line">    &#125;</div><div class="line">);</div></pre></td></tr></table></figure>
+<p>内联与JSON文档的js调用了一个函数，函数参数是JSON。函数参数提供了一种将数据传递给函数的方式。例如，如果你需要一个函数来实现两数相加的功能，首先就需要一个能够将两个数传递给函数的方式。<br>该函数实在客户端的js代码中定义的</p>
+<blockquote>
+<p>示例: 在js中声明的函数</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> getTheAnimal(data) &#123;</div><div class="line">    var myAnimal = data.anima   //will be <span class="string">"cat"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当在js中声明该函数之后，需要进行一些设置，这部分就体现出了JSON-P是如何利用<script></script>标签不受同源策略影响这一点的，如下：</p>
+<blockquote>
+<p>示例： 创建<script></script>标签，并将其动态添加到HTML文档的<head></head>标签中</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var script = document.creatElement(<span class="string">"script"</span>);</div><div class="line">script.type = <span class="string">"text/javascript"</span>;</div><div class="line">script.src = <span class="string">"http://notarealdomain.com/animal.json"</span>;</div><div class="line">document.getElementsByTagName(<span class="string">'head'</span>)[0].appendChild(script);</div></pre></td></tr></table></figure>
+<p>服务器端也需要对JSON-P提供一定的支持，他应允许用户自定义函数的名字。它通常是作为URL中的queryString的参数传递的，如下：</p>
+<blockquote>
+<p>通过queryString来告知服务器函数的名字</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">script.src = <span class="string">"http://notarealdomain.com/animal.json?callback=getTing"</span>;</div></pre></td></tr></table></figure>
+<p>服务器会根据callback参数的值来动态地为在JSON中内联的函数命名</p>
+<blockquote>
+<p>JSON-P中动态命名的函数</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">getThing(</div><div class="line">    &#123;</div><div class="line">        <span class="string">"animal"</span>: <span class="string">"cat"</span></div><div class="line">    &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -696,7 +764,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字面量与变量"><span class="nav-number">1.</span> <span class="nav-text">字面量与变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名称-值对"><span class="nav-number">2.</span> <span class="nav-text">名称-值对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体类型"><span class="nav-number">3.</span> <span class="nav-text">媒体类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组与对象"><span class="nav-number">5.</span> <span class="nav-text">数组与对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON-Schema-模式"><span class="nav-number">6.</span> <span class="nav-text">JSON Schema(模式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列化与反序列化"><span class="nav-number">7.</span> <span class="nav-text">序列化与反序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLHttpRequest"><span class="nav-number">8.</span> <span class="nav-text">XMLHttpRequest</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字面量与变量"><span class="nav-number">1.</span> <span class="nav-text">字面量与变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名称-值对"><span class="nav-number">2.</span> <span class="nav-text">名称-值对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体类型"><span class="nav-number">3.</span> <span class="nav-text">媒体类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组与对象"><span class="nav-number">5.</span> <span class="nav-text">数组与对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON-Schema-模式"><span class="nav-number">6.</span> <span class="nav-text">JSON Schema(模式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列化与反序列化"><span class="nav-number">7.</span> <span class="nav-text">序列化与反序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLHttpRequest"><span class="nav-number">8.</span> <span class="nav-text">XMLHttpRequest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨域资源共享-CORS"><span class="nav-number">9.</span> <span class="nav-text">跨域资源共享(CORS)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON-P"><span class="nav-number">10.</span> <span class="nav-text">JSON-P</span></a></li></ol></div>
             
 
           </div>
